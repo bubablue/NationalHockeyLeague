@@ -5,7 +5,7 @@ import { CssBaseline } from '@material-ui/core';
 import { getDesignTokens } from './theme';
 
 
-const useNovaTheme = () => {
+const useTheme = () => {
     const { mode: contextMode } = useTeams()
     let mode = contextMode
   
@@ -19,7 +19,7 @@ const useNovaTheme = () => {
   }
   
   export const NhlThemeProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
-    const { theme } = useNovaTheme()
+    const { theme } = useTheme()
     return (
         <ThemeProvider theme={theme}>
           <CssBaseline />
