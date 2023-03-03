@@ -20,7 +20,7 @@ export const PlayersGeneral = () => {
   const NHL_URL =
     "https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster";
   const navigate = useNavigate();
-  const classes = useStyles({});
+  const classes = useStyles();
 
   async function getTeams() {
     const response = await axios.get(NHL_URL);
