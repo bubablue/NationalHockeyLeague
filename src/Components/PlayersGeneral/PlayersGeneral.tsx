@@ -81,7 +81,6 @@ export const PlayersGeneral = () => {
         <h2>Players</h2>
       </div>
       {rows.map((row) => {
-        console.log(row);
         return (
           <TableContainer
             component={Paper}
