@@ -12,6 +12,7 @@ import {
   TableHead,
   TableRow,
 } from "@material-ui/core";
+import { TeamLogo } from "../../Images/TeamLogo";
 
 export const PlayersGeneral = () => {
   const [teams, setTeams] = React.useState<any[]>([]);
@@ -23,7 +24,6 @@ export const PlayersGeneral = () => {
 
   async function getTeams() {
     const response = await axios.get(NHL_URL);
-
     return response.data.teams;
   }
 
@@ -80,12 +80,14 @@ export const PlayersGeneral = () => {
   return (
     <div className={classes.root}>
       <h1 className={classes.title}>Players</h1>
-      {rows.map((row) => {
+      {rows.map((row: any, index: number) => {
         return (
           <TableContainer
             component={Paper}
             className={classes.playerStatsPaper}
           >
+            {/* <h1 className={classes.title}>{teams[index].name}</h1> */}
+            <TeamLogo team={teams[index].name} teamId={teams[index].name} classProp={classes.images} />
             <Table aria-label="simple table" className={classes.defaultTable}>
               <TableHead>
                 <TableRow>

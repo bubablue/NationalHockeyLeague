@@ -106,8 +106,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     defaultTable: {},
     images: {
-      height: "50px",
-      width: "50px",
+      height: "200px",
+      width: "200px",
     },
   })
 );
