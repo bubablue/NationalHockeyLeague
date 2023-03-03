@@ -77,9 +77,6 @@ export const PlayersGeneral = () => {
   return (
     <div className={classes.root}>
       <h1 className={classes.title}>Players</h1>
-      <div className={classes.section}>
-        <h2>Players</h2>
-      </div>
       {rows.map((row) => {
         return (
           <TableContainer

@@ -4,7 +4,7 @@ import Colours from "../../Context/Theme/Colours";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root:{
+    root: {
       display: "flex",
       alignContent: "center",
       alignItems: "center",
@@ -13,10 +13,10 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       justifyItems: "center",
       color: Colours.BW_02[theme.palette.mode],
-      margin: "10px",
-      border: `1px solid ${Colours.BW_02[theme.palette.mode]}`,
-      borderRadius: "10px",
+      // border: `1px solid ${Colours.BW_02[theme.palette.mode]}`,
+      // borderRadius: "10px",
       padding: "100px !important",
+      background: Colours.BW[theme.palette.mode],
     },
     title: {
       display: "flex",
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: "10px",
       width: "auto",
       background: Colours.BW[theme.palette.mode],
-      backgroundAttachment: 'fixed',
+      backgroundAttachment: "fixed",
     },
     subtitle: {
       display: "flex",
@@ -39,26 +39,13 @@ const useStyles = makeStyles((theme: Theme) =>
       alignContent: "center",
       // background: "black",
       border: 0,
-      borderRadius: 10, 
+      borderRadius: 10,
       color: Colours.BW[theme.palette.mode],
       height: 50,
       padding: "10px",
       width: "auto",
       background: "linear-gradient(-20deg, rgb(0,0,0) 30%, #FF8E53 90%)",
-      backgroundAttachment: 'fixed',
-    },
-    section: {
-      display: "flex",
-      alignContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-      flexWrap: "wrap",
-      justifyContent: "center",
-      justifyItems: "center",
-      color: Colours.BW_02[theme.palette.mode],
-      border: `1px solid ${Colours.BW_02[theme.palette.mode]}`,
-      borderRadius: "10px",
-      padding: "100px !important",
+      backgroundAttachment: "fixed",
     },
     players: {
       display: "flex",
@@ -69,12 +56,13 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyItems: "center",
       flexWrap: "wrap",
       color: Colours.BW[theme.palette.mode],
-      border: '1px solid black',
-      borderRadius: '10px',
+      border: "1px solid black",
+      borderRadius: "10px",
       padding: "1000px !important",
       width: "20rem",
       height: "47rem",
-    },playerStats: {
+    },
+    playerStats: {
       display: "flex",
       flexDirection: "column",
       textAlign: "center",
@@ -117,16 +105,6 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius: "10px",
     },
     defaultTable: {},
-    deleteButton: {
-      display: "flex",
-      flexDirection: "row",
-      textAlign: "center",
-      alignItems: "center",
-      margin: "10px",
-      cursor: "pointer",
-      background: Colours.RED[theme.palette.mode],
-      color: "white",
-    },
     images: {
       height: "50px",
       width: "50px",
