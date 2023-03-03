@@ -94,7 +94,7 @@ export const Sidebar = (props: Props) => {
               </Box>
             )}
           </Nav.Link>
-          <Nav.Link className={classes.link} href="/teams">
+          <Nav.Link className={classes.link} href="/players">
             {open ? (
               <Box className={classes.menuItem}>
                 <p>
