@@ -14,7 +14,6 @@ import {
 } from "@material-ui/core";
 
 export const PlayersGeneral = () => {
-  const [loading, setLoading] = React.useState<boolean>(false);
   const [teams, setTeams] = React.useState<any[]>([]);
 
   const NHL_URL =
@@ -57,6 +56,10 @@ export const PlayersGeneral = () => {
       position,
       id,
     };
+  };
+
+  const handleClick = (id: number) => {
+    navigate(`/stats/${id}`);
   };
 
   const rows = React.useMemo(
@@ -105,7 +108,13 @@ export const PlayersGeneral = () => {
                         {player.name}
                       </TableCell>
                       <TableCell align="left">{player.position}</TableCell>
-                      <TableCell align="left">{player.id}</TableCell>
+                      <TableCell
+                        align="left"
+                        onClick={() => handleClick(player.id)}
+                        style={{cursor: 'pointer'}}
+                      >
+                        {player.id}
+                      </TableCell>
                     </TableRow>
                   );
                 })}

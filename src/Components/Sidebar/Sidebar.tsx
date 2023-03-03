@@ -94,25 +94,6 @@ export const Sidebar = (props: Props) => {
               </Box>
             )}
           </Nav.Link>
-          <Nav.Link className={classes.link} href="/players">
-            {open ? (
-              <Box className={classes.menuItem}>
-                <p>
-                  <Tooltip title={"Teams"}>
-                    <PeopleFill />
-                  </Tooltip>
-                </p>
-              </Box>
-            ) : (
-              <Box className={classes.menuItem}>
-                <p>
-                  <Tooltip title={"Teams"}>
-                    <PeopleFill />
-                  </Tooltip>
-                </p>
-              </Box>
-            )}
-          </Nav.Link>
           <Nav.Link className={classes.link} href="/schedule">
             {open ? (
               <Box className={classes.menuItem}>
@@ -146,6 +127,25 @@ export const Sidebar = (props: Props) => {
                 <p>
                   <Tooltip title={"Stands"}>
                     <Clipboard2DataFill />
+                  </Tooltip>
+                </p>
+              </Box>
+            )}
+          </Nav.Link>
+          <Nav.Link className={classes.link} href="/players">
+            {open ? (
+              <Box className={classes.menuItem}>
+                <p>
+                  <Tooltip title={"Teams"}>
+                    <PeopleFill />
+                  </Tooltip>
+                </p>
+              </Box>
+            ) : (
+              <Box className={classes.menuItem}>
+                <p>
+                  <Tooltip title={"Teams"}>
+                    <PeopleFill />
                   </Tooltip>
                 </p>
               </Box>
