@@ -16,6 +16,7 @@ import { Login } from "./Components/auth/LogIn";
 import { Dashboard } from "./Components/Dashboard/Dashboard";
 import { MyTeam } from "./Components/MyTeam/MyTeam";
 import Game from "./Components/Games/Game";
+import { PlayersGeneral } from "./Components/PlayersGeneral/PlayersGeneral";
 
 const router = createBrowserRouter([
   {
@@ -38,10 +39,6 @@ const router = createBrowserRouter([
   {
     path: "/teams/:teamId",
     element: <div>Team</div>,
-  },
-  {
-    path: "/players",
-    element: <div>Players</div>,
   },
   {
     path: "/registration",
@@ -168,12 +165,12 @@ const router = createBrowserRouter([
     element: <div>Transaction</div>,
   },
   {
-    path: "/injuries",
-    element: <div>Injuries</div>,
-  },
-  {
-    path: "/injuries/:injuryId",
-    element: <div>Injury</div>,
+    path: 'players',
+    element: (
+      <App>
+        <PlayersGeneral />
+      </App>
+    ),
   },
   {
     path: "/teams/:teamId/roster",
