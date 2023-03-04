@@ -87,44 +87,33 @@ export const PlayersGeneral = () => {
             className={classes.playerStatsPaper}
           >
             {/* <h1 className={classes.title}>{teams[index].name}</h1> */}
-            <TeamLogo
-              team={teams[index].name}
-              teamId={teams[index].name}
-              classProp={classes.images}
-            />
+            <TeamLogo team={teams[index].name} teamId={teams[index].name} classProp={classes.images} />
             <Table aria-label="simple table" className={classes.defaultTable}>
               <TableHead>
                 <TableRow>
-                  <TableCell className={classes.defaultTable}>
+                  <TableCell>
                     <h2>Team</h2>
                   </TableCell>
-                  <TableCell className={classes.defaultTable} align="left">
-                    Name
-                  </TableCell>
-                  <TableCell className={classes.defaultTable} align="left">
-                    Position
-                  </TableCell>
-                  <TableCell className={classes.defaultTable} align="left">
-                    Id
-                  </TableCell>
+                  <TableCell align="left">Name</TableCell>
+                  <TableCell align="left">Position</TableCell>
+                  <TableCell align="left">Id</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {row.map((player: any) => {
                   return (
                     <TableRow hover={true}>
-                      <TableCell component="th" scope="row" className={classes.defaultTable}>
+                      <TableCell component="th" scope="row">
                         {player.team}
                       </TableCell>
-                      <TableCell component="th" scope="row" className={classes.defaultTable}>
+                      <TableCell component="th" scope="row">
                         {player.name}
                       </TableCell>
-                      <TableCell align="left" className={classes.defaultTable}>{player.position}</TableCell>
+                      <TableCell align="left">{player.position}</TableCell>
                       <TableCell
                         align="left"
-                        className={classes.defaultTable}
                         onClick={() => handleClick(player.id)}
-                        style={{ cursor: "pointer" }}
+                        style={{cursor: 'pointer'}}
                       >
                         {player.id}
                       </TableCell>

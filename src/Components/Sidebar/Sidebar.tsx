@@ -10,7 +10,7 @@ import {
   List,
   PeopleFill,
   PlayBtn,
-  X,
+  X
 } from "react-bootstrap-icons";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
@@ -170,22 +170,18 @@ export const Sidebar = (props: Props) => {
               </Box>
             )}
           </Nav.Link>
-          <div>
-            <Button
-              onClick={handleModeSwitch}
-              className={classes.menuItemModeSwitcher}
-            >
-              {mode === "light" ? "Dark" : "Light"}
-            </Button>
-          </div>
-          <div>
-            <Button
-              onClick={state.user.logged_in ? logout : () => navigate("/login")}
-              className={classes.menuItemText}
-            >
-              {state.user.logged_in ? <BoxArrowInLeft /> : <BoxArrowInRight />}
-            </Button>
-          </div>
+          <Button
+            onClick={handleModeSwitch}
+            className={classes.menuItemModeSwitcher}
+          >
+            {mode === "light" ? "Dark" : "Light"}
+          </Button>
+          <Button
+            onClick={state.user.logged_in ? logout : () => navigate("/login")}
+            className={classes.menuItemText}
+          >
+            {state.user.logged_in ? <BoxArrowInLeft/> : <BoxArrowInRight/>}
+          </Button>
         </Nav>
       </NavbarCollapse>
     </Navbar>

@@ -9,7 +9,6 @@ const useStyles = makeStyles(
         padding: '100px',
         paddingBottom: '100px',
         background: Colours.BW[theme.palette.mode],
-        overflow: 'hidden',
       },
       mainHeader: {
         display: "flex",

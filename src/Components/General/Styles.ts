@@ -1,15 +1,13 @@
 import { createStyles, makeStyles } from "@mui/styles";
 import Colours from "../../Context/Theme/Colours";
 import { Theme } from "@mui/material";
-import { useTeams } from "../../Context/TeamProvider";
 
-const useStyles = makeStyles((theme: Theme) => {
-  const { isMobile } = useTeams();
-  return createStyles({
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
     root: {
       padding: "100px",
       paddingBottom: "300px",
-      background: Colours.BW[theme.palette.mode],
+      background: Colours.BW[theme.palette.mode]
     },
     titleBox: {
       display: "flex",
@@ -91,7 +89,6 @@ const useStyles = makeStyles((theme: Theme) => {
       textAlign: "center",
       margin: "10px",
       cursor: "pointer",
-      minWidth: "fit-content",
       border: "1px solid black",
       borderRadius: "10px",
       padding: "10px",
@@ -109,9 +106,8 @@ const useStyles = makeStyles((theme: Theme) => {
       background: "linear-gradient(-20deg, rgb(0,0,0) 30%, #FF8E53 90%)",
       borderRadius: 10,
       margin: "10px",
-      padding: isMobile ? "10px" : "20px",
-      width: isMobile ?  "fit-content" : "350px",
-      height: isMobile ?  "fit-content" : "350px",
+      width: "350px",
+      height: "350px",
     },
     teams: {
       display: "flex",
@@ -121,7 +117,7 @@ const useStyles = makeStyles((theme: Theme) => {
       font: "15px Arial, sans-serif",
     },
     versus: {
-      display: isMobile ? "none" : "flex",
+      display: "flex",
       justifyContent: "center",
       flexDirection: "row",
       alignItems: "center",
@@ -169,7 +165,7 @@ const useStyles = makeStyles((theme: Theme) => {
       marginLeft: "10px",
       marginRight: "10px",
     },
-  });
-});
+  })
+);
 
 export default useStyles;
