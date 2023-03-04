@@ -1,9 +1,11 @@
 import { Theme } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
 import Colours from "../../Context/Theme/Colours";
+import { useTeams } from "../../Context/TeamProvider";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
+const useStyles = makeStyles((theme: Theme) => {
+  const { isMobile } = useTeams();
+  return createStyles({
     root: {
       display: "flex",
       alignContent: "center",
@@ -103,13 +105,17 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "10px",
       marginBottom: 100,
       borderRadius: "10px",
+      background: Colours.BW[theme.palette.mode],
+      color: Colours.BW_02[theme.palette.mode],
     },
-    defaultTable: {},
+    defaultTable: {
+      color: Colours.BW_02[theme.palette.mode],
+    },
     images: {
       height: "200px",
       width: "200px",
     },
-  })
-);
+  });
+});
 
 export default useStyles;

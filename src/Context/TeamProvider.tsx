@@ -68,6 +68,7 @@ export interface IAppcontext {
   mode: "dark" | "light";
   setMode: (mode: "dark" | "light") => void;
   state: any;
+  isMobile: boolean;
 }
 
 export const TeamsContext = createContext<IAppcontext>({
@@ -106,6 +107,7 @@ export const TeamsContext = createContext<IAppcontext>({
   mode: "light",
   setMode: () => {},
   state: {},
+  isMobile: false,
 });
 
 export const TeamsProvider = (props: { children?: React.ReactNode, state: any }) => {
@@ -132,6 +134,9 @@ export const TeamsProvider = (props: { children?: React.ReactNode, state: any })
       }
     }
   }, [])
+
+  const isMobile = window.innerWidth <= 768;
+  
   return (
     <TeamsContext.Provider
       value={{
@@ -170,6 +175,7 @@ export const TeamsProvider = (props: { children?: React.ReactNode, state: any })
         mode,
         setMode: toggleDarkMode,
         state: props.state,
+        isMobile,
       }}
     >
       {props.children}

@@ -1,7 +1,9 @@
 import { createStyles, makeStyles } from "@mui/styles";
+import { useTeams } from "../../../Context/TeamProvider";
 
-const useStyles = makeStyles((_theme) =>
-  createStyles({
+const useStyles = makeStyles((_theme) => {
+  const { isMobile } = useTeams();
+  return createStyles({
     root: {},
     mainHeader: {
       display: "flex",
@@ -19,31 +21,31 @@ const useStyles = makeStyles((_theme) =>
       margin: "0px 5% 50px 5%",
       width: "90%",
     },
-    sidebarToggle:{
-        background: "transparent",
-        border: 0,
-        color: "white",
+    sidebarToggle: {
+      background: "transparent",
+      border: 0,
+      color: "white",
     },
     toggle: {
-        display: "flex",
-        justifyContent: "center",
-        justifySelf: "center",
-        alignItems: "center",
-        textAlign: "center",
-        background: "transparent",
-        border: 0,
-        color: "white",
-        height: "40px",
-        width: "40px",
-        '&:hover': {
-            color: "#FF8E53",
-            cursor: "pointer",
-        }
+      display: "flex",
+      justifyContent: "center",
+      justifySelf: "center",
+      alignItems: "center",
+      textAlign: "center",
+      background: "transparent",
+      border: 0,
+      color: "white",
+      height: "40px",
+      width: "40px",
+      "&:hover": {
+        color: "#FF8E53",
+        cursor: "pointer",
+      },
     },
     drawerOpen: {
       position: "fixed",
       top: 0,
-      right: '0px',
+      right: "0px",
       height: "100%",
       background: "rgba(0,0,0,0.8)",
       width: "200px",
@@ -55,8 +57,9 @@ const useStyles = makeStyles((_theme) =>
     drawerClose: {
       position: "fixed",
       top: 0,
-      right: '0px',
-      height: "100%",
+      right: "0px",
+      height: isMobile ? "70px" : "100%",
+      borderRadius: isMobile ? "50%" : "none",
       background: "rgba(0,0,0,0.8)",
       width: "70px",
       border: "none",
@@ -84,9 +87,8 @@ const useStyles = makeStyles((_theme) =>
         color: "#FF8E53",
       },
     },
-    menuItem: {
-    },
-  })
-);
+    menuItem: {},
+  });
+});
 
 export default useStyles;
